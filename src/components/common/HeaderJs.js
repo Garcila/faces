@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 
 const HeaderJs = (props) => {
-  const { title, subtitle } = props;
+  const { title, subtitle, changeView, go } = props;
   return (
     <Header className='header' size='huge'>
       <Link className='title-link' size='huge' to='/'>
@@ -13,6 +13,9 @@ const HeaderJs = (props) => {
       </Link>
       <Header.Subheader className='subtitle' >
         {subtitle}
+      </Header.Subheader>
+      <Header.Subheader className='moreFaces' onClick={changeView}>
+        {go}
       </Header.Subheader>
     </Header>
   );

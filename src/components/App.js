@@ -4,7 +4,6 @@ import './App.css';
 import HeaderJs from './common/HeaderJs';
 import Daily from './Daily';
 import Gallery from './Gallery';
-
 import imagesData from '../imagesData';
 
 class App extends Component {
@@ -19,16 +18,28 @@ class App extends Component {
 
   showGallery() {
     if (this.state.singleImage) {
-      return <Daily images={this.state.images} />;
+      return (
+        <div>
+          <Daily images={this.state.images} />
+        </div>
+      );
     }
     return <Gallery images={this.state.images} />;
+  }
+  changeView() {
+    this.setState({ singleImage: !this.state.singleImage });
   }
 
   render() {
     return (
       <div className='App'>
         <div className='header-container'>
-          <HeaderJs title={'Faces'} subtitle={'My family doesn\'t get'} />
+          <HeaderJs
+            changeView={this.changeView.bind(this)}
+            title={'Faces...'}
+            subtitle={'My family doesn\'t get'}
+            go={'all'}
+          />
         </div>
         {this.showGallery()}
       </div>

@@ -9,7 +9,7 @@ class Image extends React.Component {
         <li className='images'>
           <img className='image' src={image} alt='one face' />
           <h3 className='image-title'>{title.toUpperCase()}</h3>
-          <div>{description}</div>
+          <div className='description'>{description}</div>
         </li>
       </div>
     );
