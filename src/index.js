@@ -5,14 +5,15 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './index.css';
 import App from './components/App';
-import Daily from './components/Daily';
+// import Daily from './components/Daily';
+import About from './components/About';
 
 const Root = () => {
   return (
     <Router>
       <div>
-        <Route exact path='/' component={Daily} />
-        <Route path='/image' component={App} />
+        <Route exact path='/' component={App} />
+        <Route path='/about' component={About} />
       </div>
     </Router>
   );
